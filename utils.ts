@@ -1,4 +1,4 @@
-import { UserRating } from "./enums"
+import { UserRating, Permissions } from "./enums"
 
 const reviewTotalDisplay = document.querySelector('#reviews')
 const returningUserDisplay = document.querySelector('#returning-user')
@@ -16,3 +16,11 @@ export function populateUser( isReturning : boolean , userName : string ){
         userNameDisplay.innerHTML = userName
     }
 }
+
+export function showDetails(authorityStatus: boolean | Permissions, element : HTMLDivElement, price: number) {
+    if (authorityStatus) {
+        const priceDisplay = document.createElement('div')
+        priceDisplay.innerHTML = price.toString() + '/night'
+        element.appendChild(priceDisplay)
+    }
+ }
