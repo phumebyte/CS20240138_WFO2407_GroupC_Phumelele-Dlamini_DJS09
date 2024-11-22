@@ -1,17 +1,11 @@
-// Number Types mini-challenge 10 10.2
-// Write a function that will only accept numbers and attend to 
-// all TypeScript weakness flags.
-// : number
-const reviewTotalDisplay = document.querySelector('#reviews')
-const returningUserDisplay = document.querySelector('#returning-user')
-const userNameDisplay = document.querySelector('#user')
+import { showReviewTotal, populateUser } from './utils'
 
 const reviews: {
     name: string;
     stars: number;
     loyaltyUser: boolean;
     date: string;
-    
+
 }[] = [
     {
         name: 'Sheia',
@@ -32,11 +26,6 @@ const reviews: {
         date: '27-03-2021'
     },
 ]
-
-function showReviewTotal( value : number, lastReviewer : string, isLoyaltyMember : boolean ){
-    let loyaltyIcon = isLoyaltyMember ? '⭐' : ''
-    reviewTotalDisplay.innerHTML = 'Total reviews ' + value.toString() + " Last Reviewed by " + lastReviewer
-}
 
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 
@@ -59,14 +48,6 @@ const you: {
     },
     isReturning: true,
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
-}
-
-function populateUser( isReturning : boolean , userName : string ){
-    if (isReturning){
-        reviewTotalDisplay.innerHTML = 'back'
-    } else {
-        userNameDisplay.innerHTML = userName
-    }
 }
 
 populateUser( you.isReturning , you.userName.firstName +  ' ' + you.userName.lastName )
