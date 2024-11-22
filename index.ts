@@ -88,6 +88,18 @@ const properties : Property[]= [{
     contact: [ + 55523574841, 'sydney@gmail.com'] ,
     isAvailable: true,
 
+},{
+    image: 'https://www.google.com/imgres?q=melia%20hotel%20malaysia&imgurl=https%3A%2F%2Fq-xx.bstatic.com%2Fxdata%2Fimages%2Fhotel%2Fmax500%2F587127261.jpg%3Fk%3Ddacc6c0bb2bd628d440d1e2e0744e858c6a38e30264ac23928dd8d39c0505246%26o%3D&imgrefurl=https%3A%2F%2Fwww.agoda.com%2Fmelia-kuala-lumpur%2Fhotel%2Fkuala-lumpur-my.html&docid=TWSrHaLDae0sVM&tbnid=0nJK24Sf9KvpnM&vet=12ahUKEwiNmcDWkfGJAxUEWUEAHcKKBDEQM3oECEUQAA..i&w=500&h=333&hcb=2&ved=2ahUKEwiNmcDWkfGJAxUEWUEAHcKKBDEQM3oECEUQAA',
+    title: 'Malia Hotel' ,
+    price: 35 ,
+    location: {
+        firstLine: 'Room 4',
+        city: 'Malia',
+        code: 45334,
+        country: 'Malaysia',
+    },
+    contact: [ +1299847316 , 'john@hotmail.com'],
+    isAvailable: false,
 }]
 
 for ( let i =0 ; i < properties.length; i++  ){
