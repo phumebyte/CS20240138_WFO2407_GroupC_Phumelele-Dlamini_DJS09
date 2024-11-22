@@ -4,13 +4,14 @@ import { Permissions , UserRating  } from './enums'
 const propertyContainer = document.getElementById('properties')
 const footer = document.querySelector('.footer')
 
-let isOpen: boolean
+let isLoggedIn: boolean
 
 const reviews: {
     name: string;
     stars: number;
     loyaltyUser: UserRating;
     date: string;
+    description?: any;
 
 }[] = [
     {
@@ -29,7 +30,8 @@ const reviews: {
         name: 'Omar',
         stars: 4,
         loyaltyUser: UserRating.SILVER,
-        date: '27-03-2021'
+        date: '27-03-2021',
+        description: 'Great hosts and amazing views'
     },
 ]
 
@@ -123,3 +125,15 @@ for ( let i =0 ; i < properties.length; i++  ){
 
 let currentLocation : [string , string, number] = ['Newcastle', '11:35', 23]
 footer.innerHTML = currentLocation[0] +  ' ' + currentLocation[1] + ' ' + currentLocation[2] + '°C'
+
+let authorityStatus : any
+
+isLoggedIn = false
+
+function showDetails(authorityStatus: boolean | Permissions, element : HTMLDivElement, price: number) {
+   if (authorityStatus) {
+       const priceDisplay = document.createElement('div')
+       priceDisplay.innerHTML = price.toString() + '/night'
+       element.appendChild(priceDisplay)
+   }
+}}
