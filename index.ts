@@ -1,6 +1,7 @@
 import { showReviewTotal, populateUser, showDetails, getTopTwoReviews } from './utils'
 import { Permissions , UserRating  } from './enums'
 import { Price , Country} from './types'
+import { Review } from './interfaces'
 
 const propertyContainer = document.querySelector('.properties')
 const reviewContainer = document.querySelector('.reviews')
@@ -10,14 +11,7 @@ const footer = document.querySelector('.footer')
 
 let isLoggedIn: boolean
 
-const reviews: {
-    name: string;
-    stars: number;
-    loyaltyUser: UserRating;
-    date: string;
-    description?: any;
-
-}[] = [
+const reviews: Review[] = [
     {
         name: 'Sheia',
         stars: 5,
@@ -120,12 +114,7 @@ for ( let i =0 ; i < properties.length; i++  ){
 }
 
 let count = 0
-function addReviews(array: {
-    name: string;
-    stars: number;
-    loyaltyUser: UserRating;
-    date: string;
-}[] ) : void {
+function addReviews(array: Review[] ) : void {
     if (!count ) {
         count++
         const topTwo = getTopTwoReviews(array)
