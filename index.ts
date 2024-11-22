@@ -1,7 +1,7 @@
 import { showReviewTotal, populateUser, showDetails, getTopTwoReviews } from './utils'
 import { Permissions , UserRating  } from './enums'
 import { Price , Country} from './types'
-import { Review } from './interfaces'
+import { Review , Property } from './interfaces'
 
 const propertyContainer = document.querySelector('.properties')
 const reviewContainer = document.querySelector('.reviews')
@@ -49,19 +49,7 @@ const you = {
 
 populateUser( you.isReturning , you.userName.firstName +  ' ' + you.userName.lastName )
 
-const properties : {
-    image: string;
-    title: string;
-    price: Price;
-    location: {
-        firstLine: string;
-        city: string;
-        code: number;
-        country: Country;
-    };
-    contact: [number, string];
-    isAvailable: boolean;
-}[]= [{
+const properties : Property[]= [{
     image: 'https://www.google.com/imgres?q=polish%20cottage&imgurl=https%3A%2F%2Fi.redd.it%2Fs7oic08mh8y41.jpg&imgrefurl=https%3A%2F%2Fwww.reddit.com%2Fr%2FFairytaleasFuck%2Fcomments%2Fgi0txd%2Ftraditional_style_painted_polish_cottage%2F&docid=vZhv5ogiaE0zEM&tbnid=0lyBQQnssQ3q_M&vet=12ahUKEwjXy6T32_CJAxUpWUEAHW3uNPoQM3oECHsQAA..i&w=960&h=720&hcb=2&ved=2ahUKEwjXy6T32_CJAxUpWUEAHW3uNPoQM3oECHsQAA',
     title: 'Polish Cottage',
     price: 25,
@@ -144,3 +132,18 @@ class MainProperty {
         this.reviews = reviews
     }
 }
+
+let yourMainProperty = new MainProperty(
+    'https://www.google.com/imgres?q=italian%20villa&imgurl=https%3A%2F%2Fmedia.architecturaldigest.com%2Fphotos%2F55e761e6302ba71f301628e4%2F16%3A9%2Fw_656%2Ch_369%2Cc_limit%2Fdam-images-homes-2011-07-italian-villas-01_italian-villas.jpg&imgrefurl=https%3A%2F%2Fwww.architecturaldigest.com%2Fgallery%2Fitalian-villas&docid=6LyHJ2xAhiuE8M&tbnid=U9Ux8rbKy6ceSM&vet=12ahUKEwi28tCwjvGJAxXrXEEAHWkRMbAQM3oECGAQAA..i&w=656&h=369&hcb=2&ved=2ahUKEwi28tCwjvGJAxXrXEEAHWkRMbAQM3oECGAQAA',
+     'Italian House',
+    [{
+        name: 'Olive',
+        stars: 5,
+        loyaltyUser: UserRating.GOLD,
+        date: '12-04-2021'
+    }])
+
+const mainImageContainer = document.querySelector('.main-image')
+const image = document.createElement('img')
+image.setAttribute('src', yourMainProperty.src)
+mainImageContainer.appendChild(image)
