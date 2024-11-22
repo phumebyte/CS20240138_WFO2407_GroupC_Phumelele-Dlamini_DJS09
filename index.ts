@@ -24,3 +24,9 @@ const reviews = [
         date: '27-03-2021'
     },
 ]
+
+function showReviewTotal( value : number, lastReviewer : string ){
+    reviewTotalDisplay.innerHTML = 'Total reviews ' + value.toString() + " Last Reviewed by " + lastReviewer
+}
+
+showReviewTotal(reviews.length, reviews[0].name)
