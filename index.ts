@@ -34,9 +34,25 @@ function showReviewTotal( value : number, lastReviewer : string, isLoyaltyMember
 
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 
-const you = {
-    userName: {firstName: 'Bobby', lastName: 'Brown'},
+const you: {
+    userName:
+    {
+        firstName: string;
+        lastName: string;
+        age: number;
+    };
+    isReturning : boolean;
+    stayedAt: (string)[]; 
+    
+} = {
+    userName: 
+    {   
+        firstName: 'Bobby',
+        lastName: 'Brown',
+        age: 25,
+    },
     isReturning: true,
+    stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
 function populateUser( isReturning : boolean , userName : string ){
