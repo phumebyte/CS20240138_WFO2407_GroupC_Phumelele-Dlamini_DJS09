@@ -64,7 +64,7 @@ const properties : {
         code: number;
         country: string;
     };
-    contact: string;
+    contact: [number, string];
     isAvailable: boolean;
 }[]= [{
     image: 'https://www.google.com/imgres?q=polish%20cottage&imgurl=https%3A%2F%2Fi.redd.it%2Fs7oic08mh8y41.jpg&imgrefurl=https%3A%2F%2Fwww.reddit.com%2Fr%2FFairytaleasFuck%2Fcomments%2Fgi0txd%2Ftraditional_style_painted_polish_cottage%2F&docid=vZhv5ogiaE0zEM&tbnid=0lyBQQnssQ3q_M&vet=12ahUKEwjXy6T32_CJAxUpWUEAHW3uNPoQM3oECHsQAA..i&w=960&h=720&hcb=2&ved=2ahUKEwjXy6T32_CJAxUpWUEAHW3uNPoQM3oECHsQAA',
@@ -76,7 +76,7 @@ const properties : {
         code: 343903,
         country: 'Poland',
     },
-    contact: 'john@hotmail.com',
+    contact: [ +1299847316 , 'john@hotmail.com'],
     isAvailable: false,
 },
 {
@@ -89,7 +89,7 @@ const properties : {
         code: 11000,
         country: 'Colombia',
     },
-    contact: 'mary@email.com',
+    contact: [+4317563241, 'mary@email.com'],
     isAvailable: true,
 },
 {
@@ -102,7 +102,7 @@ const properties : {
         code: 11000,
         country: 'United States',
     },
-    contact: 'sydney@gmail.com',
+    contact: [ + 55523574841, 'sydney@gmail.com'] ,
     isAvailable: true,
 
 }]
