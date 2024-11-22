@@ -4,9 +4,9 @@ const reviewTotalDisplay = document.querySelector('#reviews')
 const returningUserDisplay = document.querySelector('#returning-user')
 const userNameDisplay = document.querySelector('#user')
 
-export function showReviewTotal( value : number, lastReviewer : string, isLoyaltyMember : UserRating ){
+export function showReviewTotal( value : number, lastReviewer : string, isLoyaltyMember : UserRating ) : void {
     let loyaltyIcon = UserRating.GOLD ? '⭐' : ''
-    reviewTotalDisplay.innerHTML = 'Total reviews ' + value.toString() + " Last Reviewed by " + lastReviewer
+    reviewTotalDisplay.innerHTML = value.toString() + "Review" + makeMultiple(value) + "| Last Reviewed by " + lastReviewer + ' ' + loyaltyIcon
 }
 
 export function populateUser( isReturning : boolean , userName : string ){
@@ -24,3 +24,9 @@ export function showDetails(authorityStatus: boolean | Permissions, element : HT
         element.appendChild(priceDisplay)
     }
  }
+
+ export function makeMultiple(value: number) : string{
+    if (value > 1 || value === 0) {
+        return 's'
+    } else return ''
+}
