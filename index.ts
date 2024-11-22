@@ -1,5 +1,7 @@
 import { showReviewTotal, populateUser } from './utils'
 
+const propertyContainer = document.getElementById('properties')
+
 const reviews: {
     name: string;
     stars: number;
@@ -104,3 +106,13 @@ const properties : {
     isAvailable: true,
 
 }]
+
+for ( let i =0 ; i < properties.length; i++  ){
+    const card = document.createElement('div')
+    card.classList.add('card')
+    card.innerHTML = properties[i].title
+    const image = document.createElement('img')
+    image.src = properties[i].image
+    card.appendChild(image)
+    propertyContainer.appendChild(card)
+}
