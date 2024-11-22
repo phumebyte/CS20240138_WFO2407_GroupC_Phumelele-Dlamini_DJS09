@@ -51,3 +51,56 @@ const you: {
 }
 
 populateUser( you.isReturning , you.userName.firstName +  ' ' + you.userName.lastName )
+
+const properties : {
+    image: string;
+    title: string;
+    price: number;
+    location: {
+        firstLine: string;
+        city: string;
+        code: number;
+        country: string;
+    };
+    contact: string;
+    isAvailable: boolean;
+}[]= [{
+    image: '',
+    title: 'Polish Cottage',
+    price: 34,
+    location: {
+        firstLine: 'no 5',
+        city: 'Gdansk',
+        code: 343903,
+        country: 'Poland',
+    },
+    contact: 'john@hotmail.com',
+    isAvailable: false,
+},
+{
+    image: '',
+    title: 'Colombian Shack',
+    price: 100,
+    location: {
+        firstLine: 'Shack 123',
+        city: 'Bogota',
+        code: 11000,
+        country: 'Colombia',
+    },
+    contact: 'mary@email.com',
+    isAvailable: true,
+},
+{
+    image: '',
+    title: 'California Hotel',
+    price: 234,
+    location: {
+        firstLine: '7th Avenue',
+        city: 'Berkley',
+        code: 11000,
+        country: 'United States',
+    },
+    contact: 'sydney@gmail.com',
+    isAvailable: true,
+
+}]
