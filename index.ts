@@ -1,6 +1,7 @@
 import { showReviewTotal, populateUser, showDetails, getTopTwoReviews } from './utils'
 import { Permissions , UserRating  } from './enums'
 import { Review , Property } from './interfaces'
+import { MainProperty } from './classes'
 
 const propertyContainer = document.querySelector('.properties')
 const reviewContainer = document.querySelector('.reviews')
@@ -132,17 +133,6 @@ button.addEventListener('click', () => addReviews(reviews))
 
 let currentLocation : [string , string, number] = ['Newcastle', '11:35', 23]
 footer.innerHTML = currentLocation[0] +  ' ' + currentLocation[1] + ' ' + currentLocation[2] + '°C'
-
-class MainProperty {
-    src: string
-    title: string
-    reviews: Review[]
-    constructor(src, title, reviews) {
-        this.src = src
-        this.title = title
-        this.reviews = reviews
-    }
-}
 
 let yourMainProperty = new MainProperty(
     'https://www.google.com/imgres?q=italian%20villa&imgurl=https%3A%2F%2Fmedia.architecturaldigest.com%2Fphotos%2F55e761e6302ba71f301628e4%2F16%3A9%2Fw_656%2Ch_369%2Cc_limit%2Fdam-images-homes-2011-07-italian-villas-01_italian-villas.jpg&imgrefurl=https%3A%2F%2Fwww.architecturaldigest.com%2Fgallery%2Fitalian-villas&docid=6LyHJ2xAhiuE8M&tbnid=U9Ux8rbKy6ceSM&vet=12ahUKEwi28tCwjvGJAxXrXEEAHWkRMbAQM3oECGAQAA..i&w=656&h=369&hcb=2&ved=2ahUKEwi28tCwjvGJAxXrXEEAHWkRMbAQM3oECGAQAA',
