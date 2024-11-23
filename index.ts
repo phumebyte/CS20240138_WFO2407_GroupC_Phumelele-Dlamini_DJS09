@@ -1,6 +1,5 @@
 import { showReviewTotal, populateUser, showDetails, getTopTwoReviews } from './utils'
 import { Permissions , UserRating  } from './enums'
-import { Price , Country} from './types'
 import { Review , Property } from './interfaces'
 
 const propertyContainer = document.querySelector('.properties')
